@@ -11,7 +11,8 @@ public class RelativeGame extends BasicGame {
 	final static int FRAME_PER_SECOND = 60;
 	final static int SCREEN_WIDTH = 800;
 	final static int SCREEN_HEIGHT = 600;
-	final static float GRAVITY = 600;
+	final static float GRAVITY = -9.8f;
+	final static float TIME_DELTA_FACTOR = 1/60f;
 	
 	static Player player;
 
@@ -41,24 +42,42 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gameContainer, int delta) throws SlickException {
+		
 		player.Update(gameContainer, delta);
 	}
 	
-	
+
 	@Override
 	public void keyPressed(int key, char c)
 	{
-		if(key == Input.KEY_SPACE)
+		if(key == InputController.Jump)
 		{
-			player.Jump();
+			InputController.holding_Jump = true;
 		}
-		if(key == Input.KEY_RIGHT)
+		if(key == InputController.MoveRight)
 		{
-			player.Walk_Right();
+			InputController.holding_moveRight = true;
 		}
-		if(key == Input.KEY_LEFT)
+		if(key == InputController.MoveLeft)
 		{
-			player.Walk_Left();
+			InputController.holding_moveLeft = true;
+		}
+	}
+	
+	@Override
+	public void keyReleased(int key, char c)
+	{
+		if(key == InputController.Jump)
+		{
+			InputController.holding_Jump = false;
+		}
+		if(key == InputController.MoveRight)
+		{
+			InputController.holding_moveRight = false;
+		}
+		if(key == InputController.MoveLeft)
+		{
+			InputController.holding_moveLeft = false;
 		}
 	}
 
