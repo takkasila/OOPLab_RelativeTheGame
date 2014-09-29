@@ -10,8 +10,7 @@ public class Player {
 	final static float JUMP_ACC = 1;
 	final static float WIDTH = 50;
 	final static float HEIGHT = 50;
-	final static float GROUND_FRICTION = 0.3f;
-	final static float GRAVITY = 9.8f;
+	final static float MASS = 10;
 	
 	Image image;
 	public float pos_x, pos_y;
@@ -28,7 +27,6 @@ public class Player {
 	{
 		UpdatePosition();
 		GravityCheck();
-		GroundFrictionCheck();
 		
 	}
 	void UpdatePosition()
@@ -41,7 +39,7 @@ public class Player {
 	{
 		if(vel_y > 0)
 		{
-			vel_y -= GRAVITY;
+			vel_y -= RelativeGame.GRAVITY;
 			
 			//pretends it hit the ground ground
 			if(vel_y < 0)
@@ -49,10 +47,6 @@ public class Player {
 				vel_y = 0;
 			}
 		}
-	}
-	void GroundFrictionCheck()
-	{
-		
 	}
 	
 	public void Render(GameContainer gameContainer, Graphics graphics)

@@ -11,6 +11,7 @@ public class RelativeGame extends BasicGame {
 	final static int FRAME_PER_SECOND = 60;
 	final static int SCREEN_WIDTH = 800;
 	final static int SCREEN_HEIGHT = 600;
+	final static float GRAVITY = 600;
 	
 	static Player player;
 
