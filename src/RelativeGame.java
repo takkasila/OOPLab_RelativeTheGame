@@ -5,7 +5,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-
+//todo : collision debug
 public class RelativeGame extends BasicGame {
 	
 	final static int FRAME_PER_SECOND = 60;
@@ -14,8 +14,8 @@ public class RelativeGame extends BasicGame {
 	final static float GRAVITY = -9.8f;
 	final static float TIME_DELTA_FACTOR = 1/60f;
 	
-	static Player player;
-
+	Player player;
+	CollisionMap map1; 
 	public RelativeGame(String title) {
 		super(title);
 	}
@@ -31,7 +31,8 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
-		player = new Player(100, 100, "SAMPLE");
+		player = new Player(SCREEN_WIDTH/2 - player.WIDTH/2, 100, "SAMPLE");
+		map1 = new CollisionMap();
 	}
 	
 	@Override
@@ -44,8 +45,33 @@ public class RelativeGame extends BasicGame {
 	public void update(GameContainer gameContainer, int delta) throws SlickException {
 		
 		player.Update(gameContainer, delta);
+		PlayerCollisionDetection();
 	}
 	
+	void PlayerCollisionDetection()
+	{
+		for (int i = 0; i < map1.CollisionList.size(); i++) {
+
+			if(player.Bounding_Top.intersects(map1.CollisionList.get(i)))
+			{
+				player.isCollide_Top = true;
+			}
+			if(player.Bounding_Bottom.intersects(map1.CollisionList.get(i)))
+			{
+				player.isCollide_Bottom = true;
+			}
+			if(player.Bounding_Left.intersects(map1.CollisionList.get(i)))
+			{
+				player.isCollide_Left = true;
+			}
+			if(player.Bounding_Right.intersects(map1.CollisionList.get(i)))
+			{
+				player.isCollide_Right = true;
+			}
+			
+		}
+		
+	}
 
 	@Override
 	public void keyPressed(int key, char c)

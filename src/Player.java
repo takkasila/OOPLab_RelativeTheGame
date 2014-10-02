@@ -1,7 +1,11 @@
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.Rectangle2D.Float;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.w3c.dom.css.Rect;
 
 
 public class Player {
@@ -13,16 +17,33 @@ public class Player {
 	final static float HEIGHT = 50;
 	final static float MASS = 10;
 	final static float GROUND_FRICTION_FROCE = 0.5f;
+	final static float BOUNDING_SIZE_FACETOR = 0.1f;
 	
 	Image image;
 	public float pos_x, pos_y;
 	public float vel_x, vel_y;
-	public boolean isOnGround = false;
+	public boolean isCollide_Top = false;
+	public boolean isCollide_Bottom = false;
+	public boolean isCollide_Right = false;
+	public boolean isCollide_Left = false;
+	
+	public Rectangle2D Bounding_Top, Bounding_Bottom, Bounding_Right, Bounding_Left;
+	
 	
 	public Player(float start_pos_x, float start_pos_y, String start_image_url) throws SlickException
 	{
 		pos_x = start_pos_x;
 		pos_y = start_pos_y;
+
+		Bounding_Top = new Rectangle2D.Float(pos_x, pos_y
+				, WIDTH, HEIGHT * BOUNDING_SIZE_FACETOR);
+		Bounding_Bottom = new Rectangle2D.Float(pos_x, pos_y + HEIGHT - HEIGHT * BOUNDING_SIZE_FACETOR
+				, WIDTH, HEIGHT * BOUNDING_SIZE_FACETOR);
+		Bounding_Left = new Rectangle2D.Float(pos_x, pos_y
+				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT);
+		Bounding_Right = new Rectangle2D.Float(pos_x + WIDTH - WIDTH * BOUNDING_SIZE_FACETOR, pos_y
+				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT);
+		
 		
 	}
 	
@@ -32,7 +53,8 @@ public class Player {
 		UpdatePosition();
 		GravityCheck();
 		FrictionCheck();
-		
+		CollidingCheck();
+		ResetPerFrame();
 	}
 	
 	void Input()
@@ -59,14 +81,14 @@ public class Player {
 	void GravityCheck()
 	{
 		vel_y -= RelativeGame.GRAVITY * RelativeGame.TIME_DELTA_FACTOR;
-		if(isOnGround)
+		if(isCollide_Top)
 		{
 			vel_y = 0;
 		}
 	}
 	void FrictionCheck()
 	{
-		if(isOnGround)
+		if(isCollide_Top)
 		{
 			if(vel_x > 0)
 			{
@@ -82,6 +104,21 @@ public class Player {
 			}
 			
 		}
+	}
+	void CollidingCheck()
+	{
+		if(isCollide_Bottom)
+		{
+			vel_y = 0;
+		}
+		if(isCollide_Top)
+		{
+			vel_y = 0;
+		}
+	}
+	void ResetPerFrame()
+	{
+		isCollide_Bottom = isCollide_Left = isCollide_Right = isCollide_Top = false;
 	}
 	
 	public void Render(GameContainer gameContainer, Graphics graphics)
