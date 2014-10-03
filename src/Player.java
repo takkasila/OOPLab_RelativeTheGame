@@ -10,13 +10,13 @@ import org.w3c.dom.css.Rect;
 
 public class Player {
 	
-	final static float MOVE_ACC = 1;
-	final static float MAX_MOVE_ACC = 5.5f;
-	final static float JUMP_ACC = 1;
+	final static float MOVE_ACC = 70;
+	final static float MAX_MOVE_ACC = 7;
+	final static float JUMP_ACC = 8;
 	final static float WIDTH = 50;
 	final static float HEIGHT = 50;
 	final static float MASS = 10;
-	final static float GROUND_FRICTION_FROCE = 0.5f;
+	final static float GROUND_FRICTION_FROCE = 80;
 	final static float BOUNDING_SIZE_FACETOR = 0.1f;
 	
 	Image image;
@@ -26,6 +26,7 @@ public class Player {
 	public boolean isCollide_Bottom = false;
 	public boolean isCollide_Right = false;
 	public boolean isCollide_Left = false;
+	boolean triggerJump = false;
 	
 	public Rectangle2D Bounding_Top, Bounding_Bottom, Bounding_Right, Bounding_Left;
 	
@@ -34,77 +35,29 @@ public class Player {
 	{
 		pos_x = start_pos_x;
 		pos_y = start_pos_y;
-
-		Bounding_Top = new Rectangle2D.Float(pos_x, pos_y
-				, WIDTH, HEIGHT * BOUNDING_SIZE_FACETOR);
-		Bounding_Bottom = new Rectangle2D.Float(pos_x, pos_y + HEIGHT - HEIGHT * BOUNDING_SIZE_FACETOR
-				, WIDTH, HEIGHT * BOUNDING_SIZE_FACETOR);
-		Bounding_Left = new Rectangle2D.Float(pos_x, pos_y
-				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT);
-		Bounding_Right = new Rectangle2D.Float(pos_x + WIDTH - WIDTH * BOUNDING_SIZE_FACETOR, pos_y
-				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT);
+		
+		UpdateColliderPosition();
 		
 		
 	}
-	
 	public void Update(GameContainer gameContainer, int delta)
 	{
-		Input();
-		UpdatePosition();
-		GravityCheck();
-		FrictionCheck();
+		/*
+		 * Because the collision detection in the main game class
+		 * will always be called after this player update.
+		 */
 		CollidingCheck();
+		
+		Input();
+		
+		UpdatePosition();
+
+		FrictionCheck();
+		GravityCheck();
+		
 		ResetPerFrame();
 	}
-	
-	void Input()
-	{
-		if(InputController.holding_moveRight)
-		{
-			Walk_Right();
-		}
-		if(InputController.holding_moveLeft)
-		{
-			Walk_Left();
-		}
-		if(InputController.holding_Jump)
-		{
-			Jump();
-		}
-	}
-	void UpdatePosition()
-	{
-		pos_x += vel_x;
-		pos_y += vel_y;
-		
-	}
-	void GravityCheck()
-	{
-		vel_y -= RelativeGame.GRAVITY * RelativeGame.TIME_DELTA_FACTOR;
-		if(isCollide_Top)
-		{
-			vel_y = 0;
-		}
-	}
-	void FrictionCheck()
-	{
-		if(isCollide_Top)
-		{
-			if(vel_x > 0)
-			{
-				vel_x -= GROUND_FRICTION_FROCE;
-				if(vel_x <0)
-					vel_x =0;
-			}
-			if(vel_x < 0)
-			{
-				vel_x += GROUND_FRICTION_FROCE;
-				if(vel_x >0)
-					vel_x =0;
-			}
-			
-		}
-	}
+
 	void CollidingCheck()
 	{
 		if(isCollide_Bottom)
@@ -115,7 +68,83 @@ public class Player {
 		{
 			vel_y = 0;
 		}
+		if(isCollide_Left)
+		{
+			vel_x = 0;
+		}
+		if(isCollide_Right)
+		{
+			vel_x = 0;
+		}
 	}
+	
+	void Input()
+	{
+		if(isCollide_Bottom)
+		{
+			if(InputController.holding_moveRight)
+			{
+				Walk_Right();
+			}
+			if(InputController.holding_moveLeft)
+			{
+				Walk_Left();
+			}
+			if(InputController.holding_Jump)
+			{
+				Jump();
+			}
+		}
+	}
+	void Jump()
+	{
+		vel_y = JUMP_ACC;
+	}
+	
+	void UpdatePosition()
+	{
+		pos_x += vel_x ;
+		pos_y -= vel_y ;
+		UpdateColliderPosition();
+	}
+	public void UpdateColliderPosition()
+	{
+		Bounding_Top = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIZE_FACETOR, pos_y
+				, WIDTH - 2*WIDTH*BOUNDING_SIZE_FACETOR, HEIGHT * BOUNDING_SIZE_FACETOR);
+		Bounding_Bottom = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIZE_FACETOR, pos_y + HEIGHT - HEIGHT * BOUNDING_SIZE_FACETOR
+				, WIDTH - 2*WIDTH*BOUNDING_SIZE_FACETOR, HEIGHT * BOUNDING_SIZE_FACETOR);
+		
+		Bounding_Left = new Rectangle2D.Float(pos_x, pos_y + HEIGHT * BOUNDING_SIZE_FACETOR
+				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_SIZE_FACETOR);
+		Bounding_Right = new Rectangle2D.Float(pos_x + WIDTH - WIDTH * BOUNDING_SIZE_FACETOR, pos_y + HEIGHT * BOUNDING_SIZE_FACETOR
+				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_SIZE_FACETOR);
+	}
+	
+	void GravityCheck()
+	{
+		vel_y += RelativeGame.GRAVITY * RelativeGame.TIME_DELTA_FACTOR;
+	}
+	
+	void FrictionCheck()
+	{
+		if(isCollide_Bottom && !InputController.holding_moveRight && !InputController.holding_moveLeft)
+		{
+			if(vel_x > 0)
+			{
+				vel_x -= GROUND_FRICTION_FROCE * RelativeGame.TIME_DELTA_FACTOR ;
+				if(vel_x <0)
+					vel_x =0;
+			}
+			if(vel_x < 0)
+			{
+				vel_x += GROUND_FRICTION_FROCE * RelativeGame.TIME_DELTA_FACTOR;
+				if(vel_x >0)
+					vel_x =0;
+			}
+			
+		}
+	}
+	
 	void ResetPerFrame()
 	{
 		isCollide_Bottom = isCollide_Left = isCollide_Right = isCollide_Top = false;
@@ -126,15 +155,12 @@ public class Player {
 		graphics.fillRect(pos_x, pos_y, WIDTH, HEIGHT);
 	}
 	
-	void Jump()
-	{
-		vel_y = JUMP_ACC;
-	}
+	
 	void Walk_Right()
 	{
 		if(vel_x < MAX_MOVE_ACC)
 		{
-			vel_x += MOVE_ACC;
+			vel_x += MOVE_ACC * RelativeGame.TIME_DELTA_FACTOR;
 		}
 		else
 		{
@@ -145,7 +171,7 @@ public class Player {
 	{
 		if(vel_x > -MAX_MOVE_ACC)
 		{
-			vel_x -= MOVE_ACC;
+			vel_x -= MOVE_ACC * RelativeGame.TIME_DELTA_FACTOR;
 		}
 		else
 		{

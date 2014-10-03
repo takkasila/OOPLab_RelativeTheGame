@@ -1,3 +1,5 @@
+import java.awt.geom.Rectangle2D;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -5,12 +7,11 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-//todo : collision debug
 public class RelativeGame extends BasicGame {
 	
 	final static int FRAME_PER_SECOND = 60;
-	final static int SCREEN_WIDTH = 800;
-	final static int SCREEN_HEIGHT = 600;
+	final static int SCREEN_WIDTH = 1000;
+	final static int SCREEN_HEIGHT = 800;
 	final static float GRAVITY = -9.8f;
 	final static float TIME_DELTA_FACTOR = 1/60f;
 	
@@ -31,13 +32,22 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
-		player = new Player(SCREEN_WIDTH/2 - player.WIDTH/2, 100, "SAMPLE");
+		player = new Player(SCREEN_WIDTH/2 - player.WIDTH/2, 300, "SAMPLE");
 		map1 = new CollisionMap();
 	}
 	
 	@Override
 	public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
+		map1.VisualDebug(gameContainer, graphics);
 		player.Render(gameContainer, graphics);
+		Debug(graphics);
+	}
+	void Debug(Graphics graphics)
+	{
+		graphics.drawString("X: "+player.pos_x+" Y: "+player.pos_y, 10, 25);
+		graphics.drawString("Vel_X: "+player.vel_x+" Vel_Y: "+player.vel_y, 10, 45);
+		graphics.drawString("Hit Right: "+player.isCollide_Left+" Hit Left: "+player.isCollide_Right, 10, 65);
+		graphics.drawString("Hit Top: "+player.isCollide_Top+" Hit Bottom: "+player.isCollide_Bottom, 10, 85);
 	}
 
 
@@ -51,22 +61,32 @@ public class RelativeGame extends BasicGame {
 	void PlayerCollisionDetection()
 	{
 		for (int i = 0; i < map1.CollisionList.size(); i++) {
+			
+			Rectangle2D current = map1.CollisionList.get(i);
 
-			if(player.Bounding_Top.intersects(map1.CollisionList.get(i)))
+			if(player.Bounding_Top.intersects(current))
 			{
 				player.isCollide_Top = true;
+				player.pos_y = (float) (current.getY() + current.getHeight());
+				player.UpdateColliderPosition();
 			}
-			if(player.Bounding_Bottom.intersects(map1.CollisionList.get(i)))
+			if(player.Bounding_Bottom.intersects(current))
 			{
 				player.isCollide_Bottom = true;
+				player.pos_y = (float) (current.getY() - player.WIDTH);
+				player.UpdateColliderPosition();
 			}
-			if(player.Bounding_Left.intersects(map1.CollisionList.get(i)))
+			if(player.Bounding_Left.intersects(current))
 			{
 				player.isCollide_Left = true;
+				player.pos_x = (float) (current.getX() + current.getWidth());
+				player.UpdateColliderPosition();
 			}
-			if(player.Bounding_Right.intersects(map1.CollisionList.get(i)))
+			if(player.Bounding_Right.intersects(current))
 			{
 				player.isCollide_Right = true;
+				player.pos_x = (float) (current.getX() - player.WIDTH);
+				player.UpdateColliderPosition();
 			}
 			
 		}
