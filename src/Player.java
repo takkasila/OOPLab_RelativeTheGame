@@ -1,6 +1,7 @@
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Float;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -152,6 +153,7 @@ public class Player {
 	
 	public void Render(GameContainer gameContainer, Graphics graphics)
 	{
+		graphics.setColor(Color.white);
 		graphics.fillRect(pos_x, pos_y, WIDTH, HEIGHT);
 	}
 	
