@@ -10,10 +10,11 @@ import org.newdawn.slick.SlickException;
 public class RelativeGame extends BasicGame {
 	
 	final static int FRAME_PER_SECOND = 60;
-	final static int SCREEN_WIDTH = 1000;
-	final static int SCREEN_HEIGHT = 800;
+	final static int SCREEN_WIDTH = 800;
+	final static int SCREEN_HEIGHT = 600;
 	final static float GRAVITY = -9.8f;
 	final static float TIME_DELTA_FACTOR = 1/60f;
+	final static float GRID_SIZE = 100;
 	
 	Player player;
 	CollisionMap map1; 
@@ -38,9 +39,27 @@ public class RelativeGame extends BasicGame {
 	
 	@Override
 	public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
+
+		DrawGrid(graphics);
 		map1.VisualDebug(gameContainer, graphics);
 		player.Render(gameContainer, graphics);
 		Debug(graphics);
+	}
+	void DrawGrid(Graphics graphics)
+	{
+		int horizontal_line_count = (int) (SCREEN_WIDTH / GRID_SIZE);
+		int vertical_line_count = (int) (SCREEN_HEIGHT / GRID_SIZE);
+		for (int i = 0; i < horizontal_line_count; i++) {
+			graphics.drawLine(GRID_SIZE * i, 0, GRID_SIZE * i, SCREEN_HEIGHT);
+		}
+		for (int i = 0; i < vertical_line_count; i++) {
+			graphics.drawLine(0, GRID_SIZE * i, SCREEN_WIDTH, GRID_SIZE * i);
+		}
+		for (int x = 0; x < horizontal_line_count; x++) {
+			for (int y = 0; y < controllerButton.length; y++) {
+				graphics.drawString(""+(int)(x * GRID_SIZE)+","+(int)(y * GRID_SIZE), x * GRID_SIZE, y * GRID_SIZE);
+			}
+		}
 	}
 	void Debug(Graphics graphics)
 	{
@@ -53,10 +72,10 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gameContainer, int delta) throws SlickException {
-		
 		player.Update(gameContainer, delta);
 		PlayerCollisionDetection();
 	}
+	
 	
 	void PlayerCollisionDetection()
 	{
