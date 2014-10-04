@@ -12,7 +12,7 @@ public class RelativeGame extends BasicGame {
 	final static int FRAME_PER_SECOND = 60;
 	final static int SCREEN_WIDTH = 800;
 	final static int SCREEN_HEIGHT = 600;
-	public static float GRAVITY = -9.8f;
+	public static float GRAVITY = -23f;
 	final static float TIME_DELTA_FACTOR = 1/60f;
 	final static float GRID_SIZE = 100;
 	
@@ -60,6 +60,7 @@ public class RelativeGame extends BasicGame {
 		float StartPosX = (MinLines) * GRID_SIZE - Camera.pos_x;
 		
 		for (int i = 0; i < LinesCount; i++) {
+			graphics.drawString(""+(int)GRID_SIZE * (i + MinLines), StartPosX + GRID_SIZE * i, 0);
 			graphics.drawLine(StartPosX + GRID_SIZE * i
 					, 0
 					, StartPosX + GRID_SIZE * i
@@ -74,6 +75,7 @@ public class RelativeGame extends BasicGame {
 		float StartPosY = (MinLines) * GRID_SIZE - Camera.pos_y;
 		
 		for (int i = 0; i < LinesCount; i++) {
+			graphics.drawString(""+(int)GRID_SIZE * (i + MinLines), 0, StartPosY + GRID_SIZE * i);
 			graphics.drawLine(0
 					, StartPosY + GRID_SIZE * i
 					, SCREEN_WIDTH

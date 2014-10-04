@@ -16,7 +16,7 @@ public class CollisionMap {
 	{		
 		rand = new Random();
 		CollisionList.add(new Rectangle2D.Float(-1000, 400, 2000, 100));// Ground
-		CollisionList.add(new Rectangle2D.Float(150, 250, 40, 200));// Wall Left
+		CollisionList.add(new Rectangle2D.Float(150, 300, 40, 200));// Wall Left
 		CollisionList.add(new Rectangle2D.Float(700, 100, 40, 200));// Wall Right
 		CollisionList.add(new Rectangle2D.Float(400, 150, 200, 100));// Ceiling
 		

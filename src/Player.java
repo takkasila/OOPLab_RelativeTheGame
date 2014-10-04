@@ -10,7 +10,7 @@ public class Player {
 	
 	final static float MOVE_ACC = 70;
 	final static float MAX_MOVE_ACC = 7;
-	final static float JUMP_ACC = 8;
+	final static float JUMP_ACC = 10;
 	final static float WIDTH = 50;
 	final static float HEIGHT = 50;
 	final static float MASS = 10;
