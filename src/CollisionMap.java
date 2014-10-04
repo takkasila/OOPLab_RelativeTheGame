@@ -1,5 +1,4 @@
 import java.awt.geom.Rectangle2D;
-import java.awt.geom.Rectangle2D.Float;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,7 +15,7 @@ public class CollisionMap {
 	public CollisionMap()
 	{		
 		rand = new Random();
-		CollisionList.add(new Rectangle2D.Float(0, 400, 800, 100));// Ground
+		CollisionList.add(new Rectangle2D.Float(-1000, 400, 2000, 100));// Ground
 		CollisionList.add(new Rectangle2D.Float(150, 250, 40, 200));// Wall Left
 		CollisionList.add(new Rectangle2D.Float(700, 100, 40, 200));// Wall Right
 		CollisionList.add(new Rectangle2D.Float(400, 150, 200, 100));// Ceiling
@@ -34,12 +33,12 @@ public class CollisionMap {
 	{
 		for (int i = 0; i < CollisionList.size(); i++) {
 			graphics.setColor(CollisionDebugColorList.get(i));
-			graphics.fillRect((float)CollisionList.get(i).getX()
-					, (float)CollisionList.get(i).getY()
+			graphics.fillRect((float)CollisionList.get(i).getX() - Camera.pos_x
+					, (float)CollisionList.get(i).getY() - Camera.pos_y
 					, (float)CollisionList.get(i).getWidth()
 					, (float)CollisionList.get(i).getHeight());
 			graphics.setColor(Color.black);
-			graphics.drawString(""+(i+1), (float)CollisionList.get(i).getX(), (float)CollisionList.get(i).getY());
+			graphics.drawString(""+(i+1), (float)CollisionList.get(i).getX() - Camera.pos_x, (float)CollisionList.get(i).getY() - Camera.pos_y);
 			
 		}
 		

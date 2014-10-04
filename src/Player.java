@@ -1,12 +1,9 @@
 import java.awt.geom.Rectangle2D;
-import java.awt.geom.Rectangle2D.Float;
-
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
-import org.w3c.dom.css.Rect;
 
 
 public class Player {
@@ -154,7 +151,7 @@ public class Player {
 	public void Render(GameContainer gameContainer, Graphics graphics)
 	{
 		graphics.setColor(Color.white);
-		graphics.fillRect(pos_x, pos_y, WIDTH, HEIGHT);
+		graphics.fillRect(pos_x - Camera.pos_x, pos_y - Camera.pos_y, WIDTH, HEIGHT);
 	}
 	
 	
