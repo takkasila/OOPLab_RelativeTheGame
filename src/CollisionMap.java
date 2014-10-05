@@ -9,13 +9,15 @@ import org.newdawn.slick.Graphics;
 
 public class CollisionMap {
 	
-	public ArrayList<Rectangle2D> CollisionList = new ArrayList<Rectangle2D>();
+	public ArrayList<Block> CollisionList = new ArrayList<Block>();
 	public ArrayList<Color> CollisionDebugColorList = new ArrayList<Color>();
 	Random rand;
 	public CollisionMap()
 	{		
 		rand = new Random();
-		CollisionList.add(new Rectangle2D.Float(-1000, 0, 2000, 100));
+		//Map generating section
+		CollisionList.add(new Block(0, 0, 1000, 100, 0, 0));
+		CollisionList.add(new Block(500, 0, 200, 100, 2, 0));
 		
 		SetStartColor();
 	}
@@ -23,17 +25,22 @@ public class CollisionMap {
 	{
 		for (int i = 0; i < CollisionList.size(); i++) {
 			CollisionDebugColorList.add(new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)));
+			
 		}
 	}
 	
-	public void VisualDebug(GameContainer gameContainer, Graphics graphics)
+	public void Update(float player_x, float player_y)
+	{
+		for (int i = 0; i < CollisionList.size(); i++) {
+			CollisionList.get(i).Update(player_x, player_y);
+		}
+	}
+	
+	public void Render(GameContainer gameContainer, Graphics graphics)
 	{
 		for (int i = 0; i < CollisionList.size(); i++) {
 			graphics.setColor(CollisionDebugColorList.get(i));
-			graphics.fillRect((float)CollisionList.get(i).getX() - Camera.pos_x
-					, (float)CollisionList.get(i).getY() - Camera.pos_y
-					, (float)CollisionList.get(i).getWidth()
-					, (float)CollisionList.get(i).getHeight());
+			CollisionList.get(i).Render(graphics);
 			graphics.setColor(Color.black);
 			graphics.drawString(""+(i+1), (float)CollisionList.get(i).getX() - Camera.pos_x, (float)CollisionList.get(i).getY() - Camera.pos_y);
 			

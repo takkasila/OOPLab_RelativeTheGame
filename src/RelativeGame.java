@@ -18,7 +18,6 @@ public class RelativeGame extends BasicGame {
 	
 	Player player;
 	CollisionMap map1;
-	Block block1;
 	public RelativeGame(String title) {
 		super(title);
 	}
@@ -36,17 +35,15 @@ public class RelativeGame extends BasicGame {
 	public void init(GameContainer arg0) throws SlickException {
 		player = new Player(0, -100, "SAMPLE");
 		map1 = new CollisionMap();
-		block1 = new Block(100, 400, 200, 100, 2, 2);
 	}
 	
 	@Override
 	public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
 
 		DrawGrid(graphics);
-		map1.VisualDebug(gameContainer, graphics);
+		map1.Render(gameContainer, graphics);
 		player.Render(gameContainer, graphics);
 		Debug(graphics);
-		block1.Render(graphics);
 	}
 	void DrawGrid(Graphics graphics)
 	{
@@ -122,8 +119,8 @@ public class RelativeGame extends BasicGame {
 	@Override
 	public void update(GameContainer gameContainer, int delta) throws SlickException {
 		player.Update(gameContainer, delta);
+		map1.Update(player.pos_x, player.pos_y);
 		PlayerCollisionDetection();
-		block1.Update(player.pos_x, player.pos_y);
 		Camera.UpdatePosition(player.pos_x, player.pos_y);
 	}
 	
@@ -133,7 +130,7 @@ public class RelativeGame extends BasicGame {
 		for (int i = 0; i < map1.CollisionList.size(); i++) {
 			
 			Rectangle2D current = map1.CollisionList.get(i);
-
+			
 			if(player.Bounding_Top.intersects(current))
 			{
 				player.isCollide_Top = true;
