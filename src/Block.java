@@ -1,3 +1,4 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 
@@ -19,12 +20,15 @@ public class Block {
 	
 	public void Update(float player_x, float player_y)
 	{
-		pos_x = factor_x * player_x - lock_x;
-		pos_y = factor_x * player_y - lock_y;
+		pos_x = factor_x * player_x - lock_x - width/2 + Player.WIDTH/2;
+		pos_y = factor_y * (player_y + Player.HEIGHT) - lock_y;
+		//pos_y *= -1;
 	}
 	
 	public void Render(Graphics graphics)
 	{
-		graphics.drawRect(pos_x - Camera.pos_x, pos_y - Camera.pos_y, width, height);
+		graphics.setColor(Color.pink);
+		graphics.fillRect(pos_x - Camera.pos_x, pos_y - Camera.pos_y, width, height);
+		graphics.drawString(""+pos_x+" "+pos_y, 300, 400);
 	}
 }

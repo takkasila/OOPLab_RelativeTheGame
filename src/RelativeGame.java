@@ -17,7 +17,8 @@ public class RelativeGame extends BasicGame {
 	final static float GRID_SIZE = 100;
 	
 	Player player;
-	CollisionMap map1; 
+	CollisionMap map1;
+	Block block1;
 	public RelativeGame(String title) {
 		super(title);
 	}
@@ -33,8 +34,9 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
-		player = new Player(SCREEN_WIDTH/2 - player.WIDTH/2, 300, "SAMPLE");
+		player = new Player(0, -100, "SAMPLE");
 		map1 = new CollisionMap();
+		block1 = new Block(100, 400, 200, 100, 2, 2);
 	}
 	
 	@Override
@@ -44,9 +46,11 @@ public class RelativeGame extends BasicGame {
 		map1.VisualDebug(gameContainer, graphics);
 		player.Render(gameContainer, graphics);
 		Debug(graphics);
+		block1.Render(graphics);
 	}
 	void DrawGrid(Graphics graphics)
 	{
+		graphics.setColor(Color.white);
 		DrawHorizontalLine(graphics);
 		DrawVerticalLine(graphics);
 		DrawAxis(graphics);
@@ -119,6 +123,7 @@ public class RelativeGame extends BasicGame {
 	public void update(GameContainer gameContainer, int delta) throws SlickException {
 		player.Update(gameContainer, delta);
 		PlayerCollisionDetection();
+		block1.Update(player.pos_x, player.pos_y);
 		Camera.UpdatePosition(player.pos_x, player.pos_y);
 	}
 	

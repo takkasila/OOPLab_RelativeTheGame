@@ -11,8 +11,8 @@ public class Player {
 	final static float MOVE_ACC = 70;
 	final static float MAX_MOVE_ACC = 7;
 	final static float JUMP_ACC = 10;
-	final static float WIDTH = 50;
-	final static float HEIGHT = 50;
+	public final static float WIDTH = 50;
+	public final static float HEIGHT = 50;
 	final static float MASS = 10;
 	final static float GROUND_FRICTION_FROCE = 80;
 	final static float BOUNDING_SIZE_FACETOR = 0.1f;
