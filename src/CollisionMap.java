@@ -18,6 +18,8 @@ public class CollisionMap {
 		//Map generating section
 		CollisionList.add(new Block(0, 0, 1000, 100, 0, 0));
 		CollisionList.add(new Block(500, 0, 200, 100, 2, 0));
+		CollisionList.add(new Block(-300, -300, 100, 400, 0, 3));
+		CollisionList.add(new Block(-600, 0, 200, 100, 2, 2));
 		
 		SetStartColor();
 	}
