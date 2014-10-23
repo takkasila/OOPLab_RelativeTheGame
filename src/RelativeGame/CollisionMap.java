@@ -1,3 +1,4 @@
+package RelativeGame;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,6 +21,7 @@ public class CollisionMap {
 		CollisionList.add(new Block(500, 0, 200, 100, 2, 0));
 		CollisionList.add(new Block(-300, -300, 100, 400, 0, 3));
 		CollisionList.add(new Block(-600, 0, 200, 100, 2, 2));
+		CollisionList.add(new Block(300, -100, 200, 100, 2, 2));
 		
 		SetStartColor();
 	}

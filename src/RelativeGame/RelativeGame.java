@@ -1,3 +1,4 @@
+package RelativeGame;
 import java.awt.geom.Rectangle2D;
 
 import org.newdawn.slick.AppGameContainer;

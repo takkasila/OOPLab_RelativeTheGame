@@ -1,3 +1,4 @@
+package RelativeGame;
 import org.newdawn.slick.Input;
 
 

@@ -1,3 +1,4 @@
+package RelativeGame;
 
 public class Camera {
 

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_P2BvMFhQEeS8UKtXZC7fXg" type="PapyrusUMLClassDiagram" name="ClassDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_Tak0AFhQEeS8UKtXZC7fXg" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Ta8AYFhQEeS8UKtXZC7fXg" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_TbA44FhQEeS8UKtXZC7fXg" type="7017">
+        <children xmi:type="notation:Shape" xmi:id="_fZmx0FhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6Kf1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZmx0VhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZmx0lhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6KglhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZmx01hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZonAFhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6xd1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZonAVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZonAlhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6xelhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZpOEFhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZpOEVhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6xfVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZpOElhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZp1IFhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6xgFhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZp1IVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_TbA44VhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_TbA44lhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_TbA441hQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TbA45FhQEeS8UKtXZC7fXg"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_TbA45VhQEeS8UKtXZC7fXg" type="7018">
+        <children xmi:type="notation:Shape" xmi:id="_fZvUsFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6xn1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZvUsVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZv7wFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6xqVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZv7wVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZxJ4FhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6xrVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZxJ4VhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_fZ3QgFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6xyVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_fZ3QgVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_TbA45lhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_TbA451hQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_TbA46FhQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TbA46VhQEeS8UKtXZC7fXg"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_TbBf8FhQEeS8UKtXZC7fXg" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_TbBf8VhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_TbBf8lhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_TbBf81hQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TbBf9FhQEeS8UKtXZC7fXg"/>
+      </children>
+      <element xmi:type="uml:Class" href="OOPLab_RelativeTheGame.uml#_Fe6KY1hQEeS8UKtXZC7fXg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Tak0AVhQEeS8UKtXZC7fXg" x="186" y="131"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ir96cFhQEeS8UKtXZC7fXg" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ir96clhQEeS8UKtXZC7fXg" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ir96c1hQEeS8UKtXZC7fXg" type="7017">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_s7g3oFhQEeS8UKtXZC7fXg" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_s7hesFhQEeS8UKtXZC7fXg" key="collapsed" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:Shape" xmi:id="_knd90FhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x3VhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knd90VhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knek4FhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x4FhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knek4VhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knfL8FhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x41hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knfL8VhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knfL8lhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x5lhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knfL81hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knfzAFhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x6VhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knfzAVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knfzAlhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x7FhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knfzA1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_kngaEFhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x71hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kngaEVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_kngaElhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe6x8lhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kngaE1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knhBIFhQEeS8UKtXZC7fXg" type="3012">
+          <element xmi:type="uml:Property" href="OOPLab_RelativeTheGame.uml#_Fe8m4FhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knhBIVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ir96dFhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ir96dVhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ir96dlhQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ir-hgFhQEeS8UKtXZC7fXg"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ir-hgVhQEeS8UKtXZC7fXg" type="7018">
+        <children xmi:type="notation:Shape" xmi:id="_knhBIlhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6x9VhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knhBI1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knhoMFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6x-VhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knhoMVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knhoMlhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yA1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knhoM1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_kniPQFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yDVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kniPQVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_kni2UFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yGlhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kni2UVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_kni2UlhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yIVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kni2U1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knjdYFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yKFhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knjdYVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knkEcFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yL1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knkEcVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knkrgFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yNlhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knkrgVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knkrglhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yPVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knkrg1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knlSkFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yRFhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knlSkVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knl5oFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yUVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knl5oVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knmgsFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yVVhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knmgsVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knnHwFhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe6yX1hQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knnHwVhQEeS8UKtXZC7fXg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_knnHwlhQEeS8UKtXZC7fXg" type="3013">
+          <element xmi:type="uml:Operation" href="OOPLab_RelativeTheGame.uml#_Fe8m5VhQEeS8UKtXZC7fXg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_knnHw1hQEeS8UKtXZC7fXg"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ir-hglhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ir-hg1hQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ir-hhFhQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ir-hhVhQEeS8UKtXZC7fXg"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_ir-hhlhQEeS8UKtXZC7fXg" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ir-hh1hQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_ir-hiFhQEeS8UKtXZC7fXg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_ir-hiVhQEeS8UKtXZC7fXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ir-hilhQEeS8UKtXZC7fXg"/>
+      </children>
+      <element xmi:type="uml:Class" href="OOPLab_RelativeTheGame.uml#_Fe6x21hQEeS8UKtXZC7fXg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ir96cVhQEeS8UKtXZC7fXg" x="964" y="253"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_P2BvMVhQEeS8UKtXZC7fXg" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_P2BvMlhQEeS8UKtXZC7fXg"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_P2BvM1hQEeS8UKtXZC7fXg">
+      <owner xmi:type="uml:Model" href="OOPLab_RelativeTheGame.uml#_Fe6KYVhQEeS8UKtXZC7fXg"/>
+    </styles>
+    <element xmi:type="uml:Model" href="OOPLab_RelativeTheGame.uml#_Fe6KYVhQEeS8UKtXZC7fXg"/>
+  </notation:Diagram>
+  <css:ModelStyleSheets xmi:id="_Qb3AIFhQEeS8UKtXZC7fXg"/>
+</xmi:XMI>
