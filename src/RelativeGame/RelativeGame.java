@@ -1,21 +1,31 @@
 package RelativeGame;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
 
+import org.lwjgl.input.Mouse;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.util.ResourceLoader;
 
 public class RelativeGame extends BasicGame {
 	
 	final static int FRAME_PER_SECOND = 60;
-	final static int SCREEN_WIDTH = 800;
-	final static int SCREEN_HEIGHT = 600;
+	final static int SCREEN_WIDTH = 1366;
+	final static int SCREEN_HEIGHT = 768;
 	public static float GRAVITY = -23f;
-	final static float TIME_DELTA_FACTOR = 1/60f;
+	final static float TIME_DELTA_FACTOR = 1/(float)FRAME_PER_SECOND;
 	final static float GRID_SIZE = 100;
+	private boolean antiAlias = true;
+	TrueTypeFont myFont;
 	
 	Player player;
 	CollisionMap map1;
@@ -34,26 +44,63 @@ public class RelativeGame extends BasicGame {
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
-		player = new Player(0, -100, "SAMPLE");
+		player = new Player(0, -150, "SAMPLE");
 		map1 = new CollisionMap();
+		
+		
+		try {
+			InputStream inputStream = ResourceLoader.getResourceAsStream("arial.ttf");
+			Font arialFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
+			arialFont = arialFont.deriveFont(24f);
+			myFont = new TrueTypeFont(arialFont, antiAlias);
+			
+		} catch (FontFormatException | IOException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	@Override
 	public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
 
-		DrawGrid(graphics);
+		//DrawGrid(graphics);
 		map1.Render(gameContainer, graphics);
 		player.Render(gameContainer, graphics);
-		Debug(graphics);
+		//Debug(graphics);
+		RenderQuotes();
 	}
+	
+	void RenderQuotes()
+	{
+		//1
+		myFont.drawString(-1700 - Camera.pos_x, -340 - Camera.pos_y, "Life can only be understood backward;");
+		myFont.drawString(-1330 - Camera.pos_x, -310 - Camera.pos_y, "but it must be lived forward");
+		
+		//2
+		myFont.drawString(-126 - Camera.pos_x, -310 - Camera.pos_y, "Taking the first step can be harder");
+		myFont.drawString(-80 - Camera.pos_x, -280 - Camera.pos_y, "than rest of the challenge");
+		
+		//6
+		myFont.drawString(8800 - Camera.pos_x, -350 - Camera.pos_y, "Some hurdles are");
+		myFont.drawString(8788 - Camera.pos_x, -320 - Camera.pos_y, "too high to jump over");
+		myFont.drawString(9400 - Camera.pos_x, -850 - Camera.pos_y, "Leap of faith?");
+		
+		//7
+		myFont.drawString(10180 - Camera.pos_x, -300 - Camera.pos_y, "Life is full of");
+		myFont.drawString(10160 - Camera.pos_x, -270 - Camera.pos_y, "ups and downs");
+		
+		
+	}
+	
 	void DrawGrid(Graphics graphics)
 	{
 		graphics.setColor(Color.white);
 		DrawHorizontalLine(graphics);
 		DrawVerticalLine(graphics);
 		DrawAxis(graphics);
-		//OldDrawingMethod(graphics);
 	}
+	
 	void DrawHorizontalLine(Graphics graphics)
 	{
 		int MaxLines = ((int) (Camera.pos_x + SCREEN_WIDTH))/(int)GRID_SIZE;
@@ -69,6 +116,7 @@ public class RelativeGame extends BasicGame {
 					, SCREEN_HEIGHT);
 		}
 	}
+	
 	void DrawVerticalLine(Graphics graphics)
 	{
 		int MaxLines = ((int) (Camera.pos_y + SCREEN_HEIGHT))/(int)GRID_SIZE;
@@ -85,27 +133,12 @@ public class RelativeGame extends BasicGame {
 		}
 		
 	}
+	
 	void DrawAxis(Graphics graphics)
 	{
 		graphics.setColor(Color.pink);
 		graphics.drawLine(-10000 - Camera.pos_x, 0 - Camera.pos_y, 10000 - Camera.pos_x, 0 - Camera.pos_y);
 		graphics.drawLine(0 - Camera.pos_x, -10000 - Camera.pos_y, 0 - Camera.pos_x, 10000 - Camera.pos_y);
-	}
-	void OldDrawingMethod(Graphics graphics)
-	{
-		int horizontal_line_count = (int) (SCREEN_WIDTH / GRID_SIZE);
-		int vertical_line_count = (int) (SCREEN_HEIGHT / GRID_SIZE);
-		for (int i = 0; i < horizontal_line_count; i++) {
-			graphics.drawLine(GRID_SIZE * i, 0, GRID_SIZE * i, SCREEN_HEIGHT);
-		}
-		for (int i = 0; i < vertical_line_count; i++) {
-			graphics.drawLine(0, GRID_SIZE * i, SCREEN_WIDTH, GRID_SIZE * i);
-		}
-		for (int x = 0; x < horizontal_line_count; x++) {
-			for (int y = 0; y < controllerButton.length; y++) {
-				graphics.drawString(""+(int)(x * GRID_SIZE)+","+(int)(y * GRID_SIZE), x * GRID_SIZE, y * GRID_SIZE);
-			}
-		}
 	}
 	
 	void Debug(Graphics graphics)
@@ -123,7 +156,15 @@ public class RelativeGame extends BasicGame {
 		map1.Update(player.pos_x, player.pos_y);
 		PlayerCollisionDetection();
 		Camera.UpdatePosition(player.pos_x, player.pos_y);
+		
+		if(player.pos_y > 2000)
+		{
+			player.pos_x = 0;
+			player.pos_y = -200;
+		}
+		
 	}
+	
 	
 	
 	void PlayerCollisionDetection()

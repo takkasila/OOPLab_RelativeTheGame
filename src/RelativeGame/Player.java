@@ -9,14 +9,15 @@ import org.newdawn.slick.SlickException;
 
 public class Player {
 	
-	final static float MOVE_ACC = 70;
-	final static float MAX_MOVE_ACC = 7;
+	final static float MOVE_ACC = 60;
+	final static float MAX_MOVE_ACC = 5.5f;
 	final static float JUMP_ACC = 10;
 	public final static float WIDTH = 50;
 	public final static float HEIGHT = 50;
 	final static float MASS = 10;
 	final static float GROUND_FRICTION_FROCE = 80;
-	final static float BOUNDING_SIZE_FACETOR = 0.1f;
+	final static float BOUNDING_TOP_SIZE_FACETOR = 0.1f;
+	final static float BOUNDING_SIDE_SIZE_FACETOR = 0.1f;
 	
 	Image image;
 	public float pos_x, pos_y;
@@ -43,7 +44,7 @@ public class Player {
 	{
 		/*
 		 * Because the collision detection in the main game class
-		 * will always be called after this player update.
+		 * always be called after this player update.
 		 */
 		CollidingCheck();
 		
@@ -108,15 +109,15 @@ public class Player {
 	}
 	public void UpdateColliderPosition()
 	{
-		Bounding_Top = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIZE_FACETOR, pos_y
-				, WIDTH - 2*WIDTH*BOUNDING_SIZE_FACETOR, HEIGHT * BOUNDING_SIZE_FACETOR);
-		Bounding_Bottom = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIZE_FACETOR, pos_y + HEIGHT - HEIGHT * BOUNDING_SIZE_FACETOR
-				, WIDTH - 2*WIDTH*BOUNDING_SIZE_FACETOR, HEIGHT * BOUNDING_SIZE_FACETOR);
+		Bounding_Top = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIDE_SIZE_FACETOR, pos_y
+				, WIDTH - 2*WIDTH*BOUNDING_SIDE_SIZE_FACETOR, HEIGHT * BOUNDING_TOP_SIZE_FACETOR);
+		Bounding_Bottom = new Rectangle2D.Float(pos_x + WIDTH * BOUNDING_SIDE_SIZE_FACETOR, pos_y + HEIGHT - HEIGHT * BOUNDING_TOP_SIZE_FACETOR
+				, WIDTH - 2*WIDTH*BOUNDING_SIDE_SIZE_FACETOR, HEIGHT * BOUNDING_TOP_SIZE_FACETOR);
 		
-		Bounding_Left = new Rectangle2D.Float(pos_x, pos_y + HEIGHT * BOUNDING_SIZE_FACETOR
-				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_SIZE_FACETOR);
-		Bounding_Right = new Rectangle2D.Float(pos_x + WIDTH - WIDTH * BOUNDING_SIZE_FACETOR, pos_y + HEIGHT * BOUNDING_SIZE_FACETOR
-				, WIDTH * BOUNDING_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_SIZE_FACETOR);
+		Bounding_Left = new Rectangle2D.Float(pos_x, pos_y + HEIGHT * BOUNDING_TOP_SIZE_FACETOR
+				, WIDTH * BOUNDING_SIDE_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_TOP_SIZE_FACETOR);
+		Bounding_Right = new Rectangle2D.Float(pos_x + WIDTH - WIDTH * BOUNDING_SIDE_SIZE_FACETOR, pos_y + HEIGHT * BOUNDING_TOP_SIZE_FACETOR
+				, WIDTH * BOUNDING_SIDE_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_TOP_SIZE_FACETOR);
 	}
 	
 	void GravityCheck()
@@ -153,6 +154,20 @@ public class Player {
 	{
 		graphics.setColor(Color.white);
 		graphics.fillRect(pos_x - Camera.pos_x, pos_y - Camera.pos_y, WIDTH, HEIGHT);
+		
+		graphics.setColor(Color.black);
+		
+		/*
+		//top
+		graphics.fillRect(pos_x + WIDTH * BOUNDING_SIDE_SIZE_FACETOR - Camera.pos_x,  pos_y - Camera.pos_y, WIDTH - 2*WIDTH*BOUNDING_SIDE_SIZE_FACETOR, HEIGHT * BOUNDING_TOP_SIZE_FACETOR);
+		//Down
+		graphics.fillRect(pos_x + WIDTH * BOUNDING_SIDE_SIZE_FACETOR - Camera.pos_x,  pos_y + HEIGHT - HEIGHT * BOUNDING_TOP_SIZE_FACETOR - Camera.pos_y ,WIDTH - 2*WIDTH*BOUNDING_SIDE_SIZE_FACETOR, HEIGHT * BOUNDING_TOP_SIZE_FACETOR);
+		//left
+		graphics.fillRect(pos_x - Camera.pos_x, pos_y + HEIGHT * BOUNDING_TOP_SIZE_FACETOR - Camera.pos_y, WIDTH * BOUNDING_SIDE_SIZE_FACETOR, HEIGHT - 2*HEIGHT*BOUNDING_TOP_SIZE_FACETOR);
+		//right
+		graphics.fillRect(pos_x + WIDTH - WIDTH * BOUNDING_SIDE_SIZE_FACETOR - Camera.pos_x,  pos_y + HEIGHT * BOUNDING_TOP_SIZE_FACETOR - Camera.pos_y, WIDTH * BOUNDING_SIDE_SIZE_FACETOR,  HEIGHT - 2*HEIGHT*BOUNDING_TOP_SIZE_FACETOR);
+		*/
+		graphics.setColor(Color.white);
 	}
 	
 	

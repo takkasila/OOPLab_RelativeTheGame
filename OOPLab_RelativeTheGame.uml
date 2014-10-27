@@ -978,4 +978,24 @@
     <packagedElement xmi:type="uml:Artifact" xmi:id="_Fe8nBFhQEeS8UKtXZC7fXg" name="CollisionMap.java" fileName="C:\Users\takkasila\git\OOPLab_RelativeTheGame\src\RelativeGame\CollisionMap.java"/>
     <packagedElement xmi:type="uml:Artifact" xmi:id="_Fe8nBVhQEeS8UKtXZC7fXg" name="InputController.java" fileName="C:\Users\takkasila\git\OOPLab_RelativeTheGame\src\RelativeGame\InputController.java"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_TsEZAFqHEeSNr86fwJLs9Q" name="Game Update">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_WZst0FqQEeSNr86fwJLs9Q" name="" type="_Fe6x21hQEeS8UKtXZC7fXg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YLT1YFqQEeSNr86fwJLs9Q" name="" type="_Fe6KY1hQEeS8UKtXZC7fXg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jZB1kFqREeSNr86fwJLs9Q" name="" type="_Fe7YvlhQEeS8UKtXZC7fXg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_YFfQUFqHEeSNr86fwJLs9Q" name="Lifeline" represents="_WZst0FqQEeSNr86fwJLs9Q" coveredBy="_bC3AYFqHEeSNr86fwJLs9Q _bC41kVqHEeSNr86fwJLs9Q _bC41kFqHEeSNr86fwJLs9Q"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_YfiIAFqHEeSNr86fwJLs9Q" name="Lifeline0" represents="_YLT1YFqQEeSNr86fwJLs9Q" coveredBy="_bldXIFqHEeSNr86fwJLs9Q _blelQFqHEeSNr86fwJLs9Q _bld-MFqHEeSNr86fwJLs9Q _fYl7cFqQEeSNr86fwJLs9Q _fYmigFqQEeSNr86fwJLs9Q"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_fP3MUFqHEeSNr86fwJLs9Q" name="Lifeline2" coveredBy="_i-pyQFqHEeSNr86fwJLs9Q _i-rAYFqHEeSNr86fwJLs9Q _i-qZUFqHEeSNr86fwJLs9Q"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_jZAncFqREeSNr86fwJLs9Q" name="" represents="_jZB1kFqREeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_i-pyQFqHEeSNr86fwJLs9Q" name="ActionExecSpec2Start" covered="_fP3MUFqHEeSNr86fwJLs9Q" execution="_i-qZUFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_bC3AYFqHEeSNr86fwJLs9Q" name="ActionExecSpecStart" covered="_YFfQUFqHEeSNr86fwJLs9Q" execution="_bC41kFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_i-qZUFqHEeSNr86fwJLs9Q" name="ActionExecSpec2" covered="_fP3MUFqHEeSNr86fwJLs9Q" finish="_i-rAYFqHEeSNr86fwJLs9Q" start="_i-pyQFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_bC41kFqHEeSNr86fwJLs9Q" name="ActionExecSpec" covered="_YFfQUFqHEeSNr86fwJLs9Q" finish="_bC41kVqHEeSNr86fwJLs9Q" start="_bC3AYFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_bldXIFqHEeSNr86fwJLs9Q" name="ActionExecSpec0Start" covered="_YfiIAFqHEeSNr86fwJLs9Q" execution="_bld-MFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_bld-MFqHEeSNr86fwJLs9Q" name="ActionExecSpec0" covered="_YfiIAFqHEeSNr86fwJLs9Q" finish="_blelQFqHEeSNr86fwJLs9Q" start="_bldXIFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_blelQFqHEeSNr86fwJLs9Q" name="ActionExecSpec0Finish" covered="_YfiIAFqHEeSNr86fwJLs9Q" execution="_bld-MFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fYmigFqQEeSNr86fwJLs9Q" name="UpdateColliderPosition_MessageRecv" covered="_YfiIAFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_bC41kVqHEeSNr86fwJLs9Q" name="ActionExecSpecFinish" covered="_YFfQUFqHEeSNr86fwJLs9Q" execution="_bC41kFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_i-rAYFqHEeSNr86fwJLs9Q" name="ActionExecSpec2Finish" covered="_fP3MUFqHEeSNr86fwJLs9Q" execution="_i-qZUFqHEeSNr86fwJLs9Q"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fYl7cFqQEeSNr86fwJLs9Q" name="UpdateColliderPosition_MessageSend" covered="_YfiIAFqHEeSNr86fwJLs9Q"/>
+  </packagedElement>
 </uml:Model>
