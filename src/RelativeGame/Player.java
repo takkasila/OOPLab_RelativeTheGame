@@ -158,6 +158,7 @@ public class Player {
 		graphics.setColor(Color.black);
 		
 		/*
+		//Bounding collider debugging
 		//top
 		graphics.fillRect(pos_x + WIDTH * BOUNDING_SIDE_SIZE_FACETOR - Camera.pos_x,  pos_y - Camera.pos_y, WIDTH - 2*WIDTH*BOUNDING_SIDE_SIZE_FACETOR, HEIGHT * BOUNDING_TOP_SIZE_FACETOR);
 		//Down

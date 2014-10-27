@@ -74,8 +74,8 @@ public class RelativeGame extends BasicGame {
 	void RenderQuotes()
 	{
 		//1
-		myFont.drawString(-1700 - Camera.pos_x, -340 - Camera.pos_y, "Life can only be understood backward;");
-		myFont.drawString(-1330 - Camera.pos_x, -310 - Camera.pos_y, "but it must be lived forward");
+		myFont.drawString(-1800 - Camera.pos_x, -340 - Camera.pos_y, "Life can only be understood backward;");
+		myFont.drawString(-1730 - Camera.pos_x, -310 - Camera.pos_y, "but it must be lived forward");
 		
 		//2
 		myFont.drawString(-126 - Camera.pos_x, -310 - Camera.pos_y, "Taking the first step can be harder");
